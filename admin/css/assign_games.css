@@ -1,0 +1,299 @@
+/* Theme Variables */
+:root {
+    --dark-bg: #111827;
+    --darker-bg: #0f1420;
+    --card-bg: #1a1f2c;
+    --text-primary: #ffffff;
+    --text-secondary: #94a3b8;
+    --border-color: #2d3348;
+    --accent-color: #4361ee;
+    --success-color: #10b981;
+    --warning-color: #f59e0b;
+    --danger-color: #ef4444;
+}
+
+body {
+    background: var(--dark-bg);
+    color: var(--text-primary);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+    background: var(--dark-bg);
+}
+
+/* Page Layout */
+.main-content {
+    margin-left: 260px;
+    padding: 2rem;
+    min-height: 100vh;
+    background: var(--dark-bg);
+    flex: 1;
+    width: calc(100% - 260px);
+}
+
+/* Page Header */
+.page-header {
+    background: linear-gradient(145deg, rgba(67, 97, 238, 0.1), rgba(26, 30, 44, 0.9));
+    padding: 2rem;
+    border-radius: 16px;
+    margin-bottom: 2rem;
+    border: 1px solid var(--border-color);
+}
+
+.header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page-header h2 {
+    color: var(--text-primary);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+.page-header h2 i {
+    color: var(--accent-color);
+}
+
+/* Search Box */
+.search-box {
+    position: relative;
+    width: 300px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 0.875rem 1rem 0.875rem 2.75rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    background: rgba(15, 23, 42, 0.5);
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.search-box input:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 4px rgba(67, 97, 238, 0.1);
+    outline: none;
+}
+
+.search-box i {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+/* Game Master Grid */
+.gamemaster-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 1.5rem;
+    padding: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Game Master Card */
+.gamemaster-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    height: fit-content;
+}
+
+.gamemaster-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    border-color: rgba(67, 97, 238, 0.2);
+}
+
+.gamemaster-header {
+    padding: 1.75rem;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    border-bottom: 1px solid var(--border-color);
+    background: rgba(26, 30, 44, 0.5);
+}
+
+.avatar-wrapper {
+    width: 64px;
+    height: 64px;
+    border-radius: 14px;
+    background: var(--darker-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(67, 97, 238, 0.2);
+}
+
+.avatar-wrapper i {
+    font-size: 1.75rem;
+    color: var(--accent-color);
+}
+
+.info-wrapper h3 {
+    color: var(--text-primary);
+    margin: 0 0 0.5rem 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+/* Games Grid */
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1.5rem;
+}
+
+.game-checkbox {
+    background: rgba(15, 23, 42, 0.5);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 0.875rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.game-checkbox:hover {
+    background: rgba(67, 97, 238, 0.1);
+    border-color: rgba(67, 97, 238, 0.2);
+}
+
+.game-checkbox input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    border-radius: 6px;
+    border: 2px solid var(--border-color);
+    background: var(--darker-bg);
+    cursor: pointer;
+}
+
+.game-name {
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* Form Actions */
+.form-actions {
+    padding: 1.5rem;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: flex-end;
+    background: rgba(26, 30, 44, 0.3);
+}
+
+.btn-primary {
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0.875rem 1.75rem;
+    border-radius: 12px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(67, 97, 238, 0.2);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(67, 97, 238, 0.3);
+}
+
+/* Status Badge */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    background: rgba(67, 97, 238, 0.1);
+    color: var(--accent-color);
+    border: 1px solid rgba(67, 97, 238, 0.2);
+}
+
+/* Alert Styling */
+.alert {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.alert-success {
+    border-left: 4px solid var(--success-color);
+    background: rgba(16, 185, 129, 0.1);
+}
+
+.alert-danger {
+    border-left: 4px solid var(--danger-color);
+    background: rgba(239, 68, 68, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-content {
+        margin-left: 0;
+        padding: 1rem;
+        width: 100%;
+    }
+
+    .dashboard-container {
+        flex-direction: column;
+    }
+
+    .header-wrapper {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+
+    .gamemaster-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .games-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+
+    .gamemaster-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+    }
+
+    .form-actions {
+        padding: 1rem;
+        justify-content: center;
+    }
+} 

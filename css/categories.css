@@ -1,0 +1,268 @@
+/* Categories Header */
+.categories-header {
+    background: linear-gradient(135deg, var(--dark-primary) 0%, var(--dark-secondary) 100%);
+    padding: 4rem 0;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.categories-header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../images/pattern.png') repeat;
+    opacity: 0.1;
+    z-index: 1;
+}
+
+.categories-header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, var(--accent-color), #ff8f8f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.categories-stats {
+    display: flex;
+    gap: 2rem;
+    justify-content: flex-end;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+}
+
+.stat-item i {
+    font-size: 2rem;
+    color: var(--accent-color);
+}
+
+.stat-details h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.stat-details p {
+    margin: 0;
+    color: var(--text-secondary);
+}
+
+/* Platform Filter */
+.platform-filter {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: var(--dark-secondary);
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.filter-btn {
+    background: var(--dark-accent);
+    border: none;
+    color: var(--text-secondary);
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.filter-btn:hover {
+    background: var(--accent-color);
+    color: var(--text-primary);
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background: var(--accent-color);
+    color: var(--text-primary);
+    box-shadow: 0 4px 12px rgba(255, 70, 85, 0.2);
+}
+
+/* Section Headers */
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 2rem 0;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.section-title i {
+    color: var(--accent-color);
+}
+
+/* Platform Sections */
+.platform-section {
+    margin-bottom: 4rem;
+    padding: 2rem;
+    background: var(--dark-secondary);
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Category Cards */
+.category-card {
+    background: var(--dark-primary);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    border: 1px solid var(--dark-accent);
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border-color: var(--accent-color);
+}
+
+.category-banner {
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.category-banner img {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+    position: relative;
+    z-index: 1;
+}
+
+.category-content {
+    padding: 1.5rem;
+    background: var(--dark-secondary);
+}
+
+.category-content h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.category-meta {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.platform-badge, .team-size {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--dark-accent);
+    border-radius: 20px;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.tournament-text {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 1rem 0;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+.tournament-text i {
+    color: var(--accent-color);
+}
+
+.view-tournaments {
+    margin-top: 1rem;
+}
+
+.view-tournaments .btn {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 10px;
+    background: var(--accent-color);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.view-tournaments .btn:hover {
+    background: var(--accent-color-dark);
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .categories-header {
+        padding: 3rem 0;
+    }
+
+    .categories-stats {
+        justify-content: flex-start;
+        margin-top: 2rem;
+    }
+
+    .platform-section {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .categories-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .stat-item {
+        padding: 0.75rem 1rem;
+    }
+
+    .platform-filter {
+        flex-wrap: wrap;
+    }
+
+    .filter-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .categories-stats {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .stat-item {
+        width: 100%;
+    }
+
+    .platform-section {
+        margin-bottom: 2rem;
+    }
+}

@@ -1,0 +1,228 @@
+/* Core Layout */
+:root {
+    --sidebar-width: 250px;
+    --dark-bg: #1a1a1a;
+    --card-bg: #2d2d2d;
+    --text-primary: #ffffff;
+    --text-secondary: #b3b3b3;
+}
+
+body {
+    background: var(--dark-bg);
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+}
+
+/* Main Content Layout */
+.main-content {
+    flex: 1;
+    margin-left: var(--sidebar-width);
+    padding: 2rem;
+    min-height: 100vh;
+    background: var(--dark-bg);
+    max-width: calc(100% - var(--sidebar-width));
+}
+
+/* Content Container */
+.content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.stat-box {
+    background: var(--card-bg);
+    border-radius: 8px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.stat-icon {
+    font-size: 1.5rem;
+}
+
+.stat-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-info h3 {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.stat-info p {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* Quick Actions */
+.quick-actions-card {
+    background: var(--card-bg);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    font-size: 0.875rem;
+}
+
+.section-header i {
+    font-size: 1rem;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: opacity 0.2s;
+}
+
+.action-btn i {
+    font-size: 1rem;
+}
+
+.action-btn.create {
+    background: #0d6efd;
+}
+
+.action-btn.add-team {
+    background: #198754;
+}
+
+.action-btn.schedule {
+    background: #ffc107;
+    color: #000;
+}
+
+/* Recent Sections */
+.recent-sections {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.recent-card {
+    background: var(--card-bg);
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+/* Tournament Item */
+.tournament-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    margin-bottom: 0.75rem;
+}
+
+.game-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.game-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tournament-details h6 {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: 0.875rem;
+}
+
+.meta-info {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin-top: 0.25rem;
+}
+
+.status-tag {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.status-tag.upcoming {
+    background: rgba(255, 193, 7, 0.2);
+    color: #ffc107;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1400px) {
+    .content-wrapper {
+        max-width: 1000px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .content-wrapper {
+        max-width: 900px;
+    }
+}
+
+@media (max-width: 992px) {
+    .main-content {
+        margin-left: 0;
+        max-width: 100%;
+        padding: 1rem;
+    }
+    
+    .content-wrapper {
+        max-width: 100%;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .recent-sections {
+        grid-template-columns: 1fr;
+    }
+} 

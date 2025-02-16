@@ -1,0 +1,620 @@
+/* Main Layout */
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+    background: #1a1c23; /* Dark background */
+}
+
+.main-content {
+    flex: 1;
+    padding: 2rem;
+    margin-left: 250px; /* Width of sidebar */
+}
+
+/* Header Styles */
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.header-title h1 {
+    font-size: 1.8rem;
+    margin: 0;
+    color: #ffffff;
+}
+
+.header-title p {
+    margin: 0.5rem 0 0;
+    color: #a0a3bd;
+}
+
+.header-actions .btn-primary {
+    background: #4361ee;
+    border: none;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background: #2d3748;
+    border: 1px solid #3d4659;
+    border-radius: 10px;
+    padding: 1.25rem;
+    display: flex;
+    align-items: flex-start;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    transition: transform 0.2s;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+}
+
+.stat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+.stat-icon i {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.stat-icon.active { background: #4361ee; }
+.stat-icon.upcoming { background: #3498db; }
+.stat-icon.teams { background: #2ecc71; }
+.stat-icon.matches { background: #e74c3c; }
+
+.stat-info {
+    flex: 1;
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 0.25rem;
+}
+
+.stat-label {
+    color: #a0a3bd;
+    font-size: 0.875rem;
+    margin-bottom: 0.75rem;
+}
+
+.stat-main-label {
+    color: #a0a3bd;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    font-weight: 500;
+}
+
+/* Updated Stat Card Styles */
+.stat-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.25rem;
+}
+
+.stat-row:last-child {
+    margin-bottom: 0;
+}
+
+.stat-label-small {
+    font-size: 0.75rem;
+    color: #a0a3bd;
+    margin-left: 0.5rem;
+}
+
+.stat-icon.completed {
+    background: #2ecc71;
+}
+
+/* Tournament & Game Master Sections */
+.card {
+    background: #2d3748;
+    border: 1px solid #3d4659;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    margin-bottom: 1.5rem;
+}
+
+.card-header {
+    padding: 1.25rem;
+    border-bottom: 1px solid #3d4659;
+}
+
+.card-header h5 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 1.1rem;
+}
+
+.card-body {
+    padding: 1.25rem;
+}
+
+/* Active Tournaments Modern Design */
+.tournament-item {
+    display: flex;
+    align-items: center;
+    background: #343b4f;
+    border-radius: 12px;
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: none;
+}
+
+.tournament-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.tournament-item:last-child {
+    margin-bottom: 1rem; /* Keep margin for last item in category */
+}
+
+.tournament-category:last-child .tournament-item:last-child {
+    margin-bottom: 0; /* Remove margin for very last item */
+}
+
+.game-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    margin-right: 1.25rem;
+    object-fit: cover;
+    background: #2d3348;
+    padding: 0.5rem;
+}
+
+.tournament-info {
+    flex: 1;
+}
+
+.tournament-info h6 {
+    font-size: 1.1rem;
+    margin: 0 0 0.75rem;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.tournament-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.progress-text, .teams-text {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #a0a3bd;
+    font-size: 0.875rem;
+}
+
+.progress-text::before, .teams-text::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: #4361ee;
+    border-radius: 50%;
+}
+
+.progress {
+    height: 8px;
+    background: #2d3348;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 0.5rem;
+}
+
+.progress-bar {
+    background: linear-gradient(90deg, #4361ee, #6483ff);
+    transition: width 0.3s ease;
+}
+
+.tournament-item .btn-outline-primary {
+    padding: 0.5rem 1.25rem;
+    border-radius: 8px;
+    font-weight: 500;
+    margin-left: 1.25rem;
+    transition: all 0.2s ease;
+    min-width: 100px;
+    text-align: center;
+}
+
+.tournament-item .btn-outline-primary:hover {
+    background: #4361ee;
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+/* Game Master Performance */
+.gm-performance-item {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.gm-performance-item:last-child {
+    border-bottom: none;
+}
+
+.gm-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.gm-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 1rem;
+    overflow: hidden;
+}
+
+.gm-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.avatar-placeholder {
+    width: 100%;
+    height: 100%;
+    background: #2d3348; /* Darker background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #a0a3bd; /* Changed from #6c757d */
+}
+
+.gm-details h6 {
+    margin: 0 0 0.25rem;
+    color: #ffffff; /* Changed from #2c3e50 */
+}
+
+.gm-stats {
+    color: #a0a3bd; /* Changed from #6c757d */
+    font-size: 0.875rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .main-content {
+        margin-left: 0;
+        padding: 1rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .content-header {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+}
+
+/* No Data States */
+.no-data {
+    text-align: center;
+    color: #a0a3bd;
+    padding: 2rem;
+    font-style: italic;
+}
+
+/* Match details colors */
+.match-time {
+    color: #ffffff;
+}
+
+.match-teams {
+    color: #ffffff;
+}
+
+.match-meta {
+    color: #a0a3bd;
+}
+
+.match-status {
+    color: #ffffff;
+}
+
+/* Tournament meta info */
+.tournament-meta span {
+    color: #a0a3bd;
+}
+
+.progress-text, .teams-text {
+    color: #a0a3bd;
+}
+
+/* Button styles */
+.btn-outline-primary {
+    color: #4361ee;
+    border-color: #4361ee;
+}
+
+.btn-outline-primary:hover {
+    background: #4361ee;
+    color: #ffffff;
+}
+
+/* Status badges */
+.match-status.pending {
+    background: #2d3348;
+    color: #a0a3bd;
+}
+
+.match-status.ongoing {
+    background: #4361ee;
+    color: #ffffff;
+}
+
+.match-status.completed {
+    background: #2ecc71;
+    color: #ffffff;
+}
+
+/* No data message */
+.no-data {
+    color: #a0a3bd;
+}
+
+/* Match details */
+.match-details {
+    color: #ffffff;
+}
+
+.vs {
+    color: #a0a3bd;
+}
+
+.tournament {
+    color: #ffffff;
+}
+
+.gamemaster {
+    color: #a0a3bd;
+}
+
+/* Modern Recent Matches Design */
+.matches-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.match-item {
+    display: flex;
+    align-items: center;
+    background: #343b4f;
+    border-radius: 12px;
+    padding: 1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.match-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.match-time {
+    background: #2d3348;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    color: #a0a3bd;
+    font-weight: 500;
+    min-width: 80px;
+    text-align: center;
+}
+
+.match-details {
+    flex: 1;
+    margin: 0 1.5rem;
+}
+
+.match-teams {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.team {
+    font-weight: 600;
+    color: #ffffff;
+    flex: 1;
+}
+
+.team:last-child {
+    text-align: right;
+}
+
+.vs {
+    color: #4361ee;
+    font-weight: 600;
+    font-size: 0.875rem;
+    padding: 0.25rem 0.75rem;
+    background: rgba(67, 97, 238, 0.1);
+    border-radius: 6px;
+}
+
+.match-meta {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.875rem;
+}
+
+.tournament {
+    color: #a0a3bd;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tournament::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: #4361ee;
+    border-radius: 50%;
+}
+
+.gamemaster {
+    color: #a0a3bd;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.match-status {
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-align: center;
+    min-width: 100px;
+}
+
+.match-status.completed {
+    background: rgba(46, 204, 113, 0.1);
+    color: #2ecc71;
+}
+
+.match-status.ongoing {
+    background: rgba(67, 97, 238, 0.1);
+    color: #4361ee;
+}
+
+.match-status.pending {
+    background: rgba(160, 163, 189, 0.1);
+    color: #a0a3bd;
+}
+
+/* Tournament Categories */
+.tournament-category {
+    margin-bottom: 2rem;
+}
+
+.tournament-category:last-child {
+    margin-bottom: 0;
+}
+
+.category-title {
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #3d4659;
+}
+
+/* Status Badge Styles */
+.status-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.status-badge.registration {
+    background: rgba(52, 152, 219, 0.1);
+    color: #3498db;
+}
+
+.status-badge.ongoing {
+    background: rgba(67, 97, 238, 0.1);
+    color: #4361ee;
+}
+
+.status-badge.completed {
+    background: rgba(46, 204, 113, 0.1);
+    color: #2ecc71;
+}
+
+/* Add these styles for completed tournaments */
+.tournament-item.completed {
+    opacity: 0.8;
+}
+
+.tournament-item.completed .progress-bar {
+    background: linear-gradient(90deg, #2ecc71, #27ae60);
+}
+
+.tournament-item.completed .progress-text::before, 
+.tournament-item.completed .teams-text::before {
+    background: #2ecc71;
+}
+
+/* Update the status badge for completed status */
+.status-badge.completed {
+    background: rgba(46, 204, 113, 0.1);
+    color: #2ecc71;
+}
+
+/* Add a winner badge */
+.winner-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    background: rgba(255, 193, 7, 0.1);
+    color: #ffc107;
+    margin-left: auto;
+}
+
+.winner-badge i {
+    font-size: 0.875rem;
+}
+
+/* Last stat card (Matches Played) special styling */
+.stat-card:last-child .stat-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.stat-card:last-child .stat-number {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.stat-card:last-child .stat-main-label {
+    margin-top: 0;
+} 

@@ -1,0 +1,207 @@
+/* Leaderboard Header */
+.leaderboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tournament-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.tournament-info .game-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.tournament-info h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: #fff;
+}
+
+.tournament-info .game-name {
+    margin: 0.25rem 0 0 0;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.1rem;
+}
+
+.leaderboard-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Leaderboard Table */
+.leaderboard-table-wrapper {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 1rem;
+    overflow-x: auto;
+}
+
+.leaderboard-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 0.5rem;
+}
+
+.leaderboard-table th {
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.leaderboard-table td {
+    padding: 1rem;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.leaderboard-table tr td:first-child {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.leaderboard-table tr td:last-child {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+/* Top 3 Teams */
+.leaderboard-table tr.top-1 td {
+    background: rgba(255, 215, 0, 0.1);
+}
+
+.leaderboard-table tr.top-2 td {
+    background: rgba(192, 192, 192, 0.1);
+}
+
+.leaderboard-table tr.top-3 td {
+    background: rgba(205, 127, 50, 0.1);
+}
+
+/* Rank Icons */
+.rank {
+    font-weight: bold;
+    text-align: center;
+}
+
+.rank-1 {
+    color: #ffd700;
+}
+
+.rank-2 {
+    color: #c0c0c0;
+}
+
+.rank-3 {
+    color: #cd7f32;
+}
+
+/* Team Info */
+.team-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.team-logo {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+.team-name {
+    font-weight: 500;
+}
+
+/* Win Rate Progress */
+.win-rate {
+    position: relative;
+    width: 100%;
+    height: 24px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.win-rate .progress {
+    position: absolute;
+    height: 100%;
+    background: linear-gradient(90deg, #3b82f6, #60a5fa);
+    border-radius: 12px;
+    transition: width 0.3s ease;
+}
+
+.win-rate span {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    line-height: 24px;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 500;
+    mix-blend-mode: difference;
+}
+
+/* Score and Points */
+.score, .points {
+    font-weight: bold;
+    text-align: center;
+}
+
+/* No Data Message */
+.no-data {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.no-data i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.no-data h3 {
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .leaderboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .leaderboard-actions {
+        width: 100%;
+    }
+    
+    .leaderboard-actions .btn {
+        flex: 1;
+    }
+    
+    .team-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .win-rate {
+        min-width: 100px;
+    }
+} 

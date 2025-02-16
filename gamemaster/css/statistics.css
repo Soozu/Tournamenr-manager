@@ -1,0 +1,914 @@
+:root {
+    --sidebar-bg: #0a0d14;
+    --card-bg: rgba(26, 31, 46, 0.95);
+    --accent-color: #ff3b3b;
+    --accent-glow: 0 0 20px rgba(255, 59, 59, 0.3);
+    --text-primary: #ffffff;
+    --text-secondary: #a0a3bd;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --neon-blue: #00f3ff;
+    --neon-purple: #9d00ff;
+    --cyber-green: #00ff9d;
+}
+
+.main-content {
+    background: var(--sidebar-bg);
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.content-header {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, rgba(26, 31, 46, 0.95) 0%, rgba(13, 15, 23, 0.95) 100%);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 59, 59, 0.2);
+    box-shadow: 0 0 30px rgba(255, 59, 59, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.header-title h1 {
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(255, 59, 59, 0.5);
+}
+
+.header-title h1 i {
+    color: var(--accent-color);
+    text-shadow: var(--accent-glow);
+}
+
+.header-title p {
+    color: var(--text-secondary);
+    margin: 0.5rem 0 0;
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.stats-card {
+    background: linear-gradient(145deg, rgba(26, 31, 46, 0.9) 0%, rgba(13, 15, 23, 0.9) 100%);
+    border-radius: 15px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 59, 59, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+}
+
+.stats-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(255, 59, 59, 0.2);
+    border-color: var(--accent-color);
+}
+
+.card-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, rgba(255, 59, 59, 0.2) 0%, rgba(255, 59, 59, 0.1) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: var(--accent-color);
+    box-shadow: 0 0 15px rgba(255, 59, 59, 0.3);
+    animation: pulse 2s infinite;
+}
+
+.card-content h3 {
+    color: var(--text-primary);
+    font-size: 2rem;
+    margin: 0;
+    font-weight: 700;
+}
+
+.card-content p {
+    color: var(--text-secondary);
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Games Performance Section */
+.games-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.tournament-section {
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease;
+}
+
+/* Game-specific styles */
+.tournament-section.tekken-8 {
+    background: linear-gradient(145deg, rgba(255, 59, 59, 0.1), rgba(13, 15, 23, 0.95));
+    border-color: rgba(255, 59, 59, 0.3);
+}
+
+.tournament-section.call-of-duty-mobile {
+    background: linear-gradient(145deg, rgba(255, 215, 0, 0.1), rgba(13, 15, 23, 0.95));
+    border-color: rgba(255, 215, 0, 0.3);
+}
+
+.tournament-section.mobile-legends {
+    background: linear-gradient(145deg, rgba(59, 130, 246, 0.1), rgba(13, 15, 23, 0.95));
+    border-color: rgba(59, 130, 246, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .games-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .games-stats {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Remove divider since we're using grid */
+.tournament-divider {
+    display: none;
+}
+
+.stats-section h2 {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.games-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.game-stat-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 1.5rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.game-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.game-info .game-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    margin-right: 1rem;
+    object-fit: cover;
+}
+
+.game-info h4 {
+    margin: 0;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.game-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.metric {
+    text-align: center;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    transition: transform 0.2s ease;
+}
+
+.metric:hover {
+    transform: translateY(-2px);
+}
+
+.metric .value {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.metric .label {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Game-specific styles */
+.tekken-8 {
+    background: linear-gradient(145deg, rgba(255, 59, 59, 0.1), rgba(13, 15, 23, 0.95));
+}
+
+.tekken-8 .metric {
+    border: 1px solid rgba(255, 59, 59, 0.2);
+}
+
+.tekken-8 .value {
+    color: #ff3b3b;
+}
+
+.call-of-duty-mobile {
+    background: linear-gradient(145deg, rgba(255, 215, 0, 0.1), rgba(13, 15, 23, 0.95));
+}
+
+.call-of-duty-mobile .metric {
+    border: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.call-of-duty-mobile .value {
+    color: #ffd700;
+}
+
+.mobile-legends {
+    background: linear-gradient(145deg, rgba(59, 130, 246, 0.1), rgba(13, 15, 23, 0.95));
+}
+
+.mobile-legends .metric {
+    border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.mobile-legends .value {
+    color: #3b82f6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .games-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .game-metrics {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .metric {
+        padding: 0.75rem;
+    }
+    
+    .metric .value {
+        font-size: 1.5rem;
+    }
+}
+
+/* Status badge */
+.status-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-top: 0.5rem;
+}
+
+.status-badge.completed {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.no-stats {
+    text-align: center;
+    padding: 3rem;
+    grid-column: 1 / -1;
+}
+
+.no-stats i {
+    font-size: 3rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    text-shadow: var(--accent-glow);
+}
+
+.no-stats h3 {
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.no-stats p {
+    color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        padding: 1rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .games-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .game-metrics {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .stats-card {
+        padding: 1.2rem;
+    }
+}
+
+/* Leaderboard Styles */
+.leaderboard {
+    background: linear-gradient(145deg, rgba(26, 31, 46, 0.95) 0%, rgba(13, 15, 23, 0.95) 100%);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 59, 59, 0.2);
+    overflow-x: auto;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+.leaderboard-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.leaderboard-table th {
+    text-align: left;
+    padding: 1.2rem 1rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    background: rgba(255, 59, 59, 0.1);
+    border-bottom: 1px solid rgba(255, 59, 59, 0.2);
+}
+
+.leaderboard-table td {
+    padding: 1rem;
+    color: var(--text-light);
+    border-bottom: 1px solid rgba(43, 47, 58, 0.5);
+}
+
+.leaderboard-table tr:last-child td {
+    border-bottom: none;
+}
+
+.team-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.team-logo {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--accent-color);
+    box-shadow: 0 0 10px rgba(255, 59, 59, 0.3);
+    transition: all 0.3s ease;
+}
+
+.team-info:hover .team-logo {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 59, 59, 0.5);
+}
+
+.rank {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.points {
+    font-weight: 600;
+    color: var(--accent-color);
+    background: linear-gradient(135deg, var(--accent-color) 0%, #ff6b6b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(255, 59, 59, 0.3);
+}
+
+/* Top 3 Styling */
+.top-1 {
+    background: linear-gradient(145deg, rgba(255, 215, 0, 0.15) 0%, rgba(255, 215, 0, 0.05) 100%);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.1);
+}
+
+.top-2 {
+    background: linear-gradient(145deg, rgba(192, 192, 192, 0.15) 0%, rgba(192, 192, 192, 0.05) 100%);
+}
+
+.top-3 {
+    background: linear-gradient(145deg, rgba(205, 127, 50, 0.15) 0%, rgba(205, 127, 50, 0.05) 100%);
+}
+
+.top-1 .rank {
+    color: #FFD700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.top-2 .rank {
+    color: #C0C0C0;
+    text-shadow: 0 0 10px rgba(192, 192, 192, 0.5);
+}
+
+.top-3 .rank {
+    color: #CD7F32;
+    text-shadow: 0 0 10px rgba(205, 127, 50, 0.5);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .leaderboard {
+        padding: 1rem;
+    }
+
+    .leaderboard-table th,
+    .leaderboard-table td {
+        padding: 0.75rem;
+    }
+}
+
+/* Game Leaderboard Styles */
+.game-leaderboard {
+    background: var(--card-bg);
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+}
+
+.leaderboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    background: linear-gradient(145deg, rgba(26, 31, 46, 0.95), rgba(13, 15, 23, 0.95));
+    border-bottom: 1px solid var(--border-color);
+}
+
+.game-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.game-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.game-type {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.leaderboard-table-wrapper {
+    padding: 1.5rem;
+}
+
+.leaderboard-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 0.5rem;
+}
+
+.leaderboard-table th {
+    color: var(--text-secondary);
+    font-weight: 500;
+    padding: 1rem;
+    text-align: left;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.leaderboard-table td {
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.leaderboard-table tr:hover td {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.rank {
+    width: 50px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.rank-1 { color: #ffd700; }
+.rank-2 { color: #c0c0c0; }
+.rank-3 { color: #cd7f32; }
+
+.team-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.team-logo {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+.win-rate {
+    position: relative;
+    width: 100px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.win-rate .progress {
+    position: absolute;
+    height: 100%;
+    background: var(--accent-color);
+    left: 0;
+    top: 0;
+}
+
+.win-rate span {
+    position: absolute;
+    right: -40px;
+    top: -7px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.points {
+    font-weight: 600;
+    color: var(--accent-color);
+}
+
+.no-data {
+    text-align: center;
+    padding: 3rem !important;
+}
+
+.no-data i {
+    font-size: 2rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.no-data p {
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* Top 3 styling */
+.top-1 td { background: rgba(255, 215, 0, 0.05); }
+.top-2 td { background: rgba(192, 192, 192, 0.05); }
+.top-3 td { background: rgba(205, 127, 50, 0.05); }
+
+/* Update leaderboard table styles */
+.tournament-name {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.score {
+    font-weight: 600;
+    color: #ffd700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+/* Update table column widths */
+.leaderboard-table th:nth-child(1) { width: 60px; }  /* Rank */
+.leaderboard-table th:nth-child(2) { width: 200px; } /* Team */
+.leaderboard-table th:nth-child(3) { width: 200px; } /* Tournament */
+.leaderboard-table th:nth-child(4) { width: 100px; } /* Matches */
+.leaderboard-table th:nth-child(5) { width: 100px; } /* Score */
+.leaderboard-table th:nth-child(6) { width: 100px; } /* Wins */
+.leaderboard-table th:nth-child(7) { width: 150px; } /* Win Rate */
+.leaderboard-table th:nth-child(8) { width: 100px; } /* Points */
+
+/* Make table scrollable on mobile */
+@media (max-width: 1200px) {
+    .leaderboard-table-wrapper {
+        overflow-x: auto;
+    }
+    
+    .leaderboard-table {
+        min-width: 1000px;
+    }
+}
+
+/* Game-specific styles */
+.game-leaderboard.tekken-8 .game-icon {
+    border: 2px solid #ff3b3b;
+    box-shadow: 0 0 15px rgba(255, 59, 59, 0.2);
+}
+
+.game-leaderboard.tekken-8 .win-rate .progress {
+    background: linear-gradient(90deg, #ff3b3b, #ff8f8f);
+}
+
+.game-leaderboard.call-of-duty-mobile .game-icon {
+    border: 2px solid #ffd700;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+}
+
+.game-leaderboard.call-of-duty-mobile .win-rate .progress {
+    background: linear-gradient(90deg, #ffd700, #ffed4a);
+}
+
+.game-leaderboard.mobile-legends .game-icon {
+    border: 2px solid #3b82f6;
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
+}
+
+.game-leaderboard.mobile-legends .win-rate .progress {
+    background: linear-gradient(90deg, #3b82f6, #60a5fa);
+}
+
+/* Game type badges */
+.game-type {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.tekken-8 .game-type {
+    background: rgba(255, 59, 59, 0.1);
+    color: #ff3b3b;
+    border: 1px solid rgba(255, 59, 59, 0.2);
+}
+
+.call-of-duty-mobile .game-type {
+    background: rgba(255, 215, 0, 0.1);
+    color: #ffd700;
+    border: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.mobile-legends .game-type {
+    background: rgba(59, 130, 246, 0.1);
+    color: #3b82f6;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+/* Spacing between leaderboards */
+.game-leaderboard {
+    margin-bottom: 3rem;
+}
+
+.game-leaderboard:last-child {
+    margin-bottom: 0;
+}
+
+/* Game-specific header gradients */
+.tekken-8 .leaderboard-header {
+    background: linear-gradient(145deg, rgba(255, 59, 59, 0.1), rgba(13, 15, 23, 0.95));
+}
+
+.call-of-duty-mobile .leaderboard-header {
+    background: linear-gradient(145deg, rgba(255, 215, 0, 0.1), rgba(13, 15, 23, 0.95));
+}
+
+.mobile-legends .leaderboard-header {
+    background: linear-gradient(145deg, rgba(59, 130, 246, 0.1), rgba(13, 15, 23, 0.95));
+}
+
+/* Game Statistics Cards */
+.game-stat-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.game-stat-card .game-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.game-stat-card .game-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    margin-right: 1rem;
+}
+
+.game-stat-card h4 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: #fff;
+}
+
+.game-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.metric {
+    text-align: center;
+    padding: 1rem;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.metric .value {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.metric .label {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Game-specific styles */
+.tekken-8 {
+    background: linear-gradient(145deg, rgba(255, 59, 59, 0.1), rgba(13, 15, 23, 0.95));
+}
+
+.tekken-8 .metric {
+    border: 1px solid rgba(255, 59, 59, 0.2);
+}
+
+.tekken-8 .value {
+    color: #ff3b3b;
+}
+
+.call-of-duty-mobile {
+    background: linear-gradient(145deg, rgba(255, 215, 0, 0.1), rgba(13, 15, 23, 0.95));
+}
+
+.call-of-duty-mobile .metric {
+    border: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.call-of-duty-mobile .value {
+    color: #ffd700;
+}
+
+.mobile-legends {
+    background: linear-gradient(145deg, rgba(59, 130, 246, 0.1), rgba(13, 15, 23, 0.95));
+}
+
+.mobile-legends .metric {
+    border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.mobile-legends .value {
+    color: #3b82f6;
+}
+
+/* Hover effects */
+.game-stat-card:hover {
+    transform: translateY(-2px);
+    transition: transform 0.2s ease;
+}
+
+.metric:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transition: background 0.2s ease;
+}
+
+/* Tournament Section Spacing */
+.stats-section {
+    margin-bottom: 3rem;
+}
+
+.stats-section h2 {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Game Cards Container */
+.games-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+/* Individual Game Card */
+.game-stat-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 0;  /* Remove default margin since we're using grid gap */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Tournament Header Styling */
+.tournament-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    border-left: 4px solid;
+}
+
+/* Game-specific header borders */
+.tekken-8 .tournament-header {
+    border-left-color: #ff3b3b;
+}
+
+.call-of-duty-mobile .tournament-header {
+    border-left-color: #ffd700;
+}
+
+.mobile-legends .tournament-header {
+    border-left-color: #3b82f6;
+}
+
+/* Status Badge */
+.tournament-status {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.status-completed {
+    background: rgba(34, 197, 94, 0.1);
+    color: #22c55e;
+    border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+/* Add more spacing between tournament sections */
+.tournament-section {
+    margin-bottom: 4rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.tournament-section:last-child {
+    margin-bottom: 0;
+}
+
+/* Improve section transitions */
+.tournament-section {
+    transition: transform 0.3s ease;
+}
+
+.tournament-section:hover {
+    transform: translateY(-2px);
+}
+
+/* Add dividers between sections */
+.tournament-divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent);
+    margin: 3rem 0;
+} 

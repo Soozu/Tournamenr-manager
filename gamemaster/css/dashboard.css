@@ -1,0 +1,836 @@
+:root {
+    --dark-bg: #1a1f2c;
+    --darker-bg: #151922;
+    --card-bg: #1e2330;
+    --text-primary: #ffffff;
+    --text-secondary: #a1a5b7;
+    --border-color: #2b2f3a;
+    --accent-color: #ff3b3b;
+    --accent-glow: 0 0 15px rgba(255, 59, 59, 0.3);
+}
+
+.main-content {
+    padding: 2rem;
+    min-height: 100vh;
+    background: var(--dark-bg);
+}
+
+/* Dashboard Header */
+.dashboard-header {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    border: 1px solid var(--border-color);
+}
+
+.dashboard-header h1 {
+    color: var(--text-primary);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.current-date {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+/* Games Section */
+.games-section {
+    margin-bottom: 3rem;
+}
+
+.games-section .section-header {
+    background: linear-gradient(145deg, rgba(26, 31, 46, 0.95), rgba(13, 15, 23, 0.95));
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    margin-bottom: 2rem;
+}
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 1.5rem;
+}
+
+.game-card {
+    background: linear-gradient(145deg, rgba(26, 31, 46, 0.98), rgba(13, 15, 23, 0.98));
+    border-radius: 15px;
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    color: #e0e0e0;
+}
+
+.game-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.game-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.game-info h3 {
+    color: #ffffff;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.game-type {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #b0b0b0;
+    font-size: 0.9rem;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    width: fit-content;
+}
+
+.game-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.stat-item {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    color: #e0e0e0;
+}
+
+.stat-value {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+}
+
+.stat-label {
+    color: #b0b0b0;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.game-progress {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.progress-header label {
+    color: #e0e0e0;
+    font-weight: 500;
+}
+
+.progress {
+    height: 8px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.total-teams {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #b0b0b0;
+    font-size: 0.9rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Game-specific colors */
+.game-card.call-of-duty-mobile {
+    border-color: #ffd700;
+}
+
+.game-card.call-of-duty-mobile .game-icon {
+    border: 2px solid #ffd700;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+}
+
+.game-card.call-of-duty-mobile .stat-value {
+    color: #ffd700;
+}
+
+.game-card.call-of-duty-mobile .progress-bar {
+    background: linear-gradient(90deg, #ffd700, #ffed4a);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .games-grid {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .game-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Today's Matches */
+.matches-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1.5rem;
+}
+
+.match-card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+    color: #e0e0e0;
+}
+
+.match-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.match-header img {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.match-info h4 {
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin: 0 0 0.25rem 0;
+}
+
+.match-time {
+    color: #b0b0b0;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.match-time i {
+    color: var(--accent-color);
+}
+
+.teams-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.team {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.team-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.team-name {
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.vs {
+    color: #ffffff;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 59, 59, 0.1);
+    border-radius: 20px;
+}
+
+/* Recent Activity */
+.activity-list {
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+}
+
+.activity-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.activity-item:last-child {
+    border-bottom: none;
+}
+
+.activity-icon img {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.activity-content p {
+    color: #e0e0e0;
+    margin: 0;
+}
+
+.activity-time {
+    color: #b0b0b0;
+    font-size: 0.85rem;
+    display: block;
+    margin-top: 0.25rem;
+}
+
+/* Empty States */
+.no-matches, .no-activity {
+    text-align: center;
+    padding: 3rem 2rem;
+}
+
+.no-matches i, .no-activity i {
+    font-size: 3rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.no-matches h3 {
+    color: #b0b0b0;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.no-matches p, .no-activity p {
+    color: #b0b0b0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-content {
+        padding: 1rem;
+    }
+
+    .games-grid, .matches-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .game-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .teams-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .team {
+        justify-content: center;
+    }
+
+    .vs {
+        margin: 1rem 0;
+    }
+}
+
+.recent-tournaments {
+    margin-top: 3rem;
+}
+
+.recent-tournaments .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    background: linear-gradient(145deg, rgba(26, 31, 46, 0.95), rgba(13, 15, 23, 0.95));
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.recent-tournaments .section-header h2 {
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 0;
+}
+
+.recent-tournaments .section-header h2 i {
+    color: var(--accent-color);
+}
+
+.view-all {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--accent-color);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.view-all:hover {
+    background: var(--accent-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.recent-tournaments .tournament-card {
+    background: linear-gradient(145deg, rgba(26, 31, 46, 0.98), rgba(13, 15, 23, 0.98));
+    border-radius: 15px;
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.recent-tournaments .tournament-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.recent-tournaments .game-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 2px solid var(--accent-color);
+    box-shadow: 0 0 15px rgba(255, 59, 59, 0.2);
+}
+
+.recent-tournaments .tournament-info {
+    flex: 1;
+}
+
+.recent-tournaments .tournament-info h3 {
+    color: #ffffff;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.recent-tournaments .game-name {
+    color: #b0b0b0;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.recent-tournaments .tournament-status {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.recent-tournaments .tournament-status.completed {
+    background: rgba(40, 167, 69, 0.1);
+    color: #28a745;
+    border: 1px solid rgba(40, 167, 69, 0.2);
+}
+
+.recent-tournaments .tournament-status.ongoing {
+    background: rgba(255, 159, 0, 0.1);
+    color: #ff9f00;
+    border: 1px solid rgba(255, 159, 0, 0.2);
+}
+
+.recent-tournaments .tournament-status.registration {
+    background: rgba(54, 153, 255, 0.1);
+    color: #3699ff;
+    border: 1px solid rgba(54, 153, 255, 0.2);
+}
+
+.recent-tournaments .tournament-actions {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.recent-tournaments .btn-primary {
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    transition: all 0.3s ease;
+    width: 100%;
+    justify-content: center;
+}
+
+.recent-tournaments .btn-primary:hover {
+    transform: translateY(-2px);
+    background: #ff2525;
+    box-shadow: 0 4px 15px rgba(255, 59, 59, 0.3);
+}
+
+.recent-tournaments .btn-primary i {
+    font-size: 1.1rem;
+}
+
+/* Tournament Details */
+.recent-tournaments .tournament-details {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 1.25rem;
+    margin-top: 1.5rem;
+}
+
+.recent-tournaments .detail-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #e0e0e0;
+    margin-bottom: 1rem;
+}
+
+.recent-tournaments .detail-item i {
+    color: var(--accent-color);
+    font-size: 1.1rem;
+}
+
+.recent-tournaments .detail-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Game-specific styles */
+.game-card.tekken-8 {
+    background: linear-gradient(145deg, rgba(26, 31, 46, 0.95), rgba(13, 15, 23, 0.95));
+    border-color: #ff3b3b;
+}
+
+.game-card.mobile-legends {
+    background: linear-gradient(145deg, rgba(26, 31, 46, 0.95), rgba(13, 15, 23, 0.95));
+    border-color: #3b82f6;
+}
+
+.game-info {
+    flex: 1;
+}
+
+.game-type {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #b0b0b0;
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+}
+
+/* Tekken specific colors */
+.stat-item.tekken .stat-value {
+    color: #ff3b3b;
+}
+
+.progress-bar.tekken {
+    background: linear-gradient(90deg, #ff3b3b, #ff8f8f);
+}
+
+/* Mobile Legends specific colors */
+.stat-item.ml .stat-value {
+    color: #3b82f6;
+}
+
+.progress-bar.ml {
+    background: linear-gradient(90deg, #3b82f6, #60a5fa);
+}
+
+/* Game icons */
+.game-card.tekken-8 .game-icon {
+    border: 2px solid #ff3b3b;
+    box-shadow: 0 0 15px rgba(255, 59, 59, 0.2);
+}
+
+.game-card.mobile-legends .game-icon {
+    border: 2px solid #3b82f6;
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
+}
+
+/* Hover effects */
+.game-card.tekken-8:hover {
+    box-shadow: 0 8px 25px rgba(255, 59, 59, 0.15);
+}
+
+.game-card.mobile-legends:hover {
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.15);
+}
+
+/* Winner section styling */
+.winner-info {
+    margin-top: 1.5rem;
+    padding: 1.25rem;
+    background: rgba(40, 167, 69, 0.05);
+    border: 1px solid rgba(40, 167, 69, 0.2);
+    border-radius: 10px;
+}
+
+.winner-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #b0b0b0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.winner-label i {
+    color: #ffd700;
+    font-size: 1.2rem;
+    filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.4));
+}
+
+.winner-team {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+}
+
+.winner-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 2px solid #28a745;
+    box-shadow: 0 0 15px rgba(40, 167, 69, 0.2);
+}
+
+.winner-name {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.member-count {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #b0b0b0;
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+}
+
+.member-count i {
+    color: #28a745;
+}
+
+.completion-date {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(40, 167, 69, 0.2);
+    color: #b0b0b0;
+    font-size: 0.9rem;
+    text-align: right;
+}
+
+/* Status badges */
+.tournament-status {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.tournament-status.completed {
+    background: rgba(40, 167, 69, 0.1);
+    color: #28a745;
+    border: 1px solid rgba(40, 167, 69, 0.2);
+}
+
+.tournament-status.ongoing {
+    background: rgba(255, 159, 0, 0.1);
+    color: #ff9f00;
+    border: 1px solid rgba(255, 159, 0, 0.2);
+}
+
+.tournament-status.registration {
+    background: rgba(54, 153, 255, 0.1);
+    color: #3699ff;
+    border: 1px solid rgba(54, 153, 255, 0.2);
+}
+
+/* Team count styling */
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+}
+
+.detail-item i {
+    color: var(--accent-color);
+    font-size: 1.1rem;
+}
+
+.detail-item span {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+/* General text colors */
+body {
+    color: #e0e0e0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #ffffff;
+}
+
+/* Games section */
+.game-card {
+    color: #e0e0e0;
+}
+
+.game-info h3 {
+    color: #ffffff;
+}
+
+.game-type {
+    color: #b0b0b0;
+}
+
+.stat-item {
+    color: #e0e0e0;
+}
+
+.stat-value {
+    color: #ffffff;
+}
+
+.stat-label {
+    color: #b0b0b0;
+}
+
+.progress-header label {
+    color: #e0e0e0;
+}
+
+.progress-count {
+    color: #ffffff;
+}
+
+.total-teams {
+    color: #b0b0b0;
+}
+
+/* Matches section */
+.match-card {
+    color: #e0e0e0;
+}
+
+.match-info h4 {
+    color: #ffffff;
+}
+
+.match-time {
+    color: #b0b0b0;
+}
+
+.team-name {
+    color: #ffffff;
+}
+
+.vs {
+    color: #ffffff;
+}
+
+/* Activity section */
+.activity-content p {
+    color: #e0e0e0;
+}
+
+.activity-time {
+    color: #b0b0b0;
+}
+
+/* Recent tournaments section */
+.tournament-info h3 {
+    color: #ffffff;
+}
+
+.game-name {
+    color: #b0b0b0;
+}
+
+.detail-item {
+    color: #e0e0e0;
+}
+
+.winner-label {
+    color: #b0b0b0;
+}
+
+.winner-name {
+    color: #ffffff;
+}
+
+/* Status badges - make them more visible */
+.match-status, .tournament-status {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* Links */
+a {
+    color: #4a9eff;
+}
+
+a:hover {
+    color: #67aeff;
+}
+
+/* No data messages */
+.no-matches h3, .no-activity p {
+    color: #b0b0b0;
+} 

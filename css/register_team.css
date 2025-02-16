@@ -1,0 +1,158 @@
+:root {
+    --dark-bg: #1a1f2c;
+    --darker-bg: #151922;
+    --card-bg: #1e2330;
+    --text-primary: #ffffff;
+    --text-secondary: #a1a5b7;
+    --border-color: #2b2f3a;
+    --accent-color: #ff3b3b;
+}
+
+.registration-container {
+    background: var(--dark-bg);
+    min-height: 100vh;
+    padding: 3rem 0;
+}
+
+.registration-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.registration-header h1 {
+    color: var(--text-primary);
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.registration-header h2 {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+}
+
+.registration-form-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border: 1px solid var(--border-color);
+}
+
+.form-section {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.form-section h3 {
+    color: var(--text-primary);
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+}
+
+.member-form {
+    background: var(--darker-bg);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.member-form h4 {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.info-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--border-color);
+}
+
+.info-card h3 {
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.info-item {
+    margin-bottom: 1rem;
+}
+
+.info-item label {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+}
+
+.info-item span {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+}
+
+.rules-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.rules-list li {
+    color: var(--text-secondary);
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.rules-list li:before {
+    content: "•";
+    color: var(--accent-color);
+}
+
+.form-actions {
+    text-align: center;
+    padding-top: 1rem;
+}
+
+/* Form Styling */
+.form-control {
+    background: var(--darker-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+}
+
+.form-control:focus {
+    background: var(--darker-bg);
+    border-color: var(--accent-color);
+    color: var(--text-primary);
+    box-shadow: none;
+}
+
+.btn-primary {
+    background: var(--accent-color);
+    border: none;
+    padding: 0.75rem 2rem;
+}
+
+.btn-primary:hover {
+    background: darken(var(--accent-color), 10%);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .registration-container {
+        padding: 1rem;
+    }
+
+    .registration-header h1 {
+        font-size: 2rem;
+    }
+
+    .registration-form-card {
+        padding: 1rem;
+    }
+} 

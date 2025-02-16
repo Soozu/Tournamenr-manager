@@ -1,0 +1,208 @@
+/* Main Layout */
+.main-container {
+    display: flex;
+    min-height: 100vh;
+    background: var(--dark-primary);
+}
+
+.main-content {
+    flex: 1;
+    padding: 2rem;
+    margin-left: 280px;
+}
+
+/* Content Header */
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.header-title h1 {
+    font-size: 1.75rem;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+/* Filters */
+.filters-container {
+    margin-bottom: 2rem;
+}
+
+.filter-group {
+    display: flex;
+    gap: 1rem;
+    max-width: 800px;
+}
+
+.form-select, .form-control {
+    background: var(--dark-secondary);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    padding: 0.75rem 1rem;
+}
+
+/* Matches Container */
+.matches-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Match Card */
+.match-card {
+    background: var(--dark-secondary);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s ease;
+}
+
+.match-card:hover {
+    transform: translateY(-2px);
+}
+
+.match-header {
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.02);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tournament-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.game-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+}
+
+.match-status {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+}
+
+.match-status.pending {
+    background: rgba(var(--accent-rgb), 0.1);
+    color: var(--accent-color);
+}
+
+.match-status.ongoing {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+}
+
+.match-status.completed {
+    background: rgba(107, 114, 128, 0.1);
+    color: #6b7280;
+}
+
+.match-content {
+    padding: 1.5rem;
+}
+
+.match-teams {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.team {
+    flex: 1;
+    text-align: center;
+}
+
+.team-name {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.vs {
+    padding: 0 2rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+.match-details {
+    display: flex;
+    gap: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.match-actions {
+    padding: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.match-actions .btn {
+    flex: 1;
+}
+
+/* Modal Styles */
+.modal-content {
+    background: var(--dark-secondary);
+    color: var(--text-primary);
+}
+
+.modal-header {
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.modal-footer {
+    border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-content {
+        margin-left: 0;
+        padding: 1rem;
+    }
+
+    .content-header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .filter-group {
+        flex-direction: column;
+    }
+
+    .match-teams {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .vs {
+        padding: 1rem 0;
+    }
+
+    .match-details {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .match-actions {
+        flex-direction: column;
+    }
+} 

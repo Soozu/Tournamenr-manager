@@ -1,0 +1,183 @@
+/* Bracket Header */
+.bracket-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tournament-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.tournament-info .game-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.tournament-info h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: #fff;
+}
+
+.tournament-info .game-name {
+    margin: 0.25rem 0 0 0;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.1rem;
+}
+
+.bracket-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Tournament Bracket */
+.bracket-container {
+    overflow-x: auto;
+    padding: 2rem 0;
+}
+
+.tournament-bracket {
+    display: flex;
+    gap: 2rem;
+    min-width: fit-content;
+    padding: 0 1rem;
+}
+
+.round {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    min-width: 300px;
+}
+
+.round-title {
+    text-align: center;
+    color: #fff;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+}
+
+.match {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.match-teams {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.team {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.team.winner {
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.team-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.team-logo {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.team-name {
+    color: #fff;
+    font-weight: 500;
+}
+
+.score {
+    font-weight: bold;
+    color: #fff;
+    min-width: 2rem;
+    text-align: center;
+}
+
+.match-status {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.match-status.completed {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+}
+
+.match-status.pending {
+    background: rgba(59, 130, 246, 0.1);
+    color: #3b82f6;
+}
+
+/* No Brackets Message */
+.no-brackets {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.no-brackets i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.no-brackets h3 {
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .bracket-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .bracket-actions {
+        width: 100%;
+    }
+    
+    .bracket-actions .btn {
+        flex: 1;
+    }
+    
+    .round {
+        min-width: 250px;
+    }
+} 

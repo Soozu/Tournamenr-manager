@@ -1,0 +1,753 @@
+:root {
+    --sidebar-bg: #1a1f2e;
+    --card-bg: rgba(26, 31, 46, 0.95);
+    --accent-color: #ff3b3b;
+    --text-primary: #ffffff;
+    --text-secondary: #a0a3bd;
+    --hover-glow: 0 0 20px rgba(255, 59, 59, 0.2);
+    --accent-glow: 0 0 15px rgba(255, 59, 59, 0.3);
+    --border-color: rgba(255, 255, 255, 0.1);
+}
+
+.main-content {
+    background: var(--sidebar-bg);
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: var(--card-bg);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+}
+
+.header-title h1 {
+    font-size: 2.5rem;
+    color: var(--text-primary);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.header-title h1 i {
+    font-size: 2rem;
+    color: var(--accent-color);
+    text-shadow: var(--accent-glow);
+}
+
+.header-title p {
+    color: var(--text-secondary);
+    margin: 0.5rem 0 0;
+    font-size: 1.1rem;
+}
+
+.btn-calendar {
+    background: rgba(255, 59, 59, 0.1);
+    border: 1px solid var(--accent-color);
+    color: var(--text-primary);
+    padding: 0.8rem 1.5rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-calendar:hover {
+    background: rgba(255, 59, 59, 0.2);
+    box-shadow: var(--hover-glow);
+    transform: translateY(-2px);
+}
+
+.schedule-timeline {
+    padding: 1.5rem;
+    position: relative;
+}
+
+.date-header {
+    display: flex;
+    align-items: center;
+    margin: 2rem 0 1rem;
+}
+
+.date-badge {
+    background: var(--accent-color);
+    padding: 0.8rem 1.2rem;
+    border-radius: 12px;
+    text-align: center;
+    min-width: 90px;
+    box-shadow: var(--hover-glow);
+}
+
+.date-badge .day {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    display: block;
+    line-height: 1;
+}
+
+.date-badge .month {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+    text-transform: uppercase;
+    margin-top: 0.3rem;
+}
+
+.date-line {
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(to right, var(--accent-color) 30%, transparent);
+    margin-left: 1.5rem;
+}
+
+.schedule-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    padding: 1.8rem;
+    margin-bottom: 1.5rem;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 2rem;
+    align-items: center;
+}
+
+.schedule-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-glow);
+    border-color: var(--accent-color);
+}
+
+.game-info {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.game-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 2px solid var(--accent-color);
+    box-shadow: var(--accent-glow);
+}
+
+.game-name {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 1.1rem;
+}
+
+.teams-vs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin: 1.5rem 0;
+}
+
+.team {
+    flex: 1;
+    max-width: 200px;
+    text-align: center;
+}
+
+.team-name {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 1.1rem;
+}
+
+.vs-badge {
+    background: var(--accent-color);
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+    color: var(--text-primary);
+    font-weight: 700;
+    font-size: 1rem;
+    box-shadow: var(--hover-glow);
+}
+
+.match-time {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+.match-time i {
+    color: var(--accent-color);
+}
+
+.no-schedules {
+    text-align: center;
+    padding: 5rem 2rem;
+    background: var(--card-bg);
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+}
+
+.no-schedules i {
+    font-size: 4rem;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+    text-shadow: var(--accent-glow);
+}
+
+.no-schedules h3 {
+    color: var(--text-primary);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.no-schedules p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+/* Status badges */
+.status-badge {
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.status-badge.pending {
+    background: rgba(255, 193, 7, 0.1);
+    color: #ffc107;
+}
+
+.status-badge.live {
+    background: rgba(255, 59, 59, 0.1);
+    color: var(--accent-color);
+}
+
+.status-badge.completed {
+    background: rgba(40, 167, 69, 0.1);
+    color: #28a745;
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        padding: 1rem;
+    }
+
+    .content-header {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .schedule-card {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1.5rem;
+        text-align: center;
+    }
+
+    .game-info {
+        justify-content: center;
+    }
+
+    .teams-vs {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .team {
+        max-width: 100%;
+    }
+
+    .vs-badge {
+        margin: 0.5rem 0;
+    }
+}
+
+.team-score {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-left: 1rem;
+}
+
+.winner {
+    position: relative;
+}
+
+.winner::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 70%;
+    background: var(--accent-color);
+    border-radius: 2px;
+    box-shadow: var(--accent-glow);
+}
+
+.winner-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 1rem;
+    background: rgba(255, 59, 59, 0.1);
+    color: var(--accent-color);
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-left: 1rem;
+    border: 1px solid var(--accent-color);
+}
+
+.winner-label i {
+    color: #ffd700;
+    text-shadow: var(--accent-glow);
+}
+
+.tournament-status {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    margin-left: 1rem;
+    background: rgba(255, 59, 59, 0.1);
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+}
+
+.schedule-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.5rem;
+}
+
+.match-filter {
+    background: rgba(255, 59, 59, 0.1);
+    border: 1px solid var(--accent-color);
+    color: var(--text-primary);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    min-width: 180px;
+    margin-right: 1rem;
+}
+
+.match-filter:focus {
+    box-shadow: var(--hover-glow);
+    border-color: var(--accent-color);
+    outline: none;
+}
+
+.match-filter option {
+    background: var(--card-bg);
+    color: var(--text-primary);
+}
+
+.completion-date {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    display: block;
+    margin-top: 0.25rem;
+}
+
+.game-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.team-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 1px solid var(--accent-color);
+    margin-right: 0.5rem;
+}
+
+.team-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.schedule-card.completed {
+    background: rgba(255, 59, 59, 0.05);
+}
+
+.schedule-card.completed .tournament-status {
+    background: rgba(255, 59, 59, 0.15);
+}
+
+.match-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.team {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.team.winner {
+    background: rgba(255, 59, 59, 0.1);
+    border: 1px solid var(--accent-color);
+}
+
+.tournament-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.tournament-meta {
+    display: flex;
+    gap: 1rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.tournament-type {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    background: rgba(255, 59, 59, 0.1);
+    color: var(--accent-color);
+    border-radius: 4px;
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+    border: 1px solid var(--accent-color);
+}
+
+.prize-pool, .bracket-type {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.prize-pool i, .bracket-type i {
+    color: var(--accent-color);
+}
+
+.tournament-date {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+}
+
+/* Manage Button Styles */
+.btn-manage {
+    padding: 0.5rem 1rem;
+    background: rgba(255, 59, 59, 0.1);
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-manage:hover {
+    background: var(--accent-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: var(--hover-glow);
+}
+
+.btn-manage i {
+    font-size: 1rem;
+}
+
+.schedule-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+/* Add animation for button click */
+.btn-manage:active {
+    transform: scale(0.95);
+}
+
+.header-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.match-filter {
+    padding: 0.5rem 1rem;
+    background: rgba(255, 59, 59, 0.1);
+    border: 1px solid var(--accent-color);
+    color: var(--text-primary);
+    border-radius: 8px;
+    font-size: 0.9rem;
+    min-width: 150px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.match-filter:hover {
+    background: rgba(255, 59, 59, 0.2);
+    box-shadow: var(--hover-glow);
+}
+
+.match-filter:focus {
+    outline: none;
+    box-shadow: var(--hover-glow);
+}
+
+.match-filter option {
+    background: var(--card-bg);
+    color: var(--text-primary);
+    padding: 0.5rem;
+}
+
+.calendar-btn {
+    padding: 0.5rem 1.2rem;
+    background: rgba(255, 59, 59, 0.1);
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    border-radius: 8px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.calendar-btn:hover {
+    background: var(--accent-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: var(--hover-glow);
+}
+
+/* Calendar Modal Styles */
+.modal-content {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+}
+
+.modal-header {
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 1.5rem;
+}
+
+.modal-title {
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+#matchCalendar {
+    background: var(--darker-bg);
+    border-radius: 8px;
+    padding: 1rem;
+    height: 600px;
+}
+
+.fc {
+    --fc-border-color: var(--border-color);
+    --fc-button-bg-color: rgba(255, 59, 59, 0.1);
+    --fc-button-border-color: var(--accent-color);
+    --fc-button-text-color: var(--accent-color);
+    --fc-button-hover-bg-color: var(--accent-color);
+    --fc-button-hover-border-color: var(--accent-color);
+    --fc-button-hover-text-color: #fff;
+    --fc-today-bg-color: rgba(255, 59, 59, 0.05);
+}
+
+.fc-theme-standard td, .fc-theme-standard th {
+    border-color: var(--border-color);
+}
+
+.fc .fc-daygrid-day.fc-day-today {
+    background: rgba(255, 59, 59, 0.05);
+}
+
+.fc-daygrid-event {
+    background: rgba(255, 59, 59, 0.1);
+    border: 1px solid var(--accent-color);
+    color: var(--text-primary);
+}
+
+.fc-event {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.fc-event:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--hover-glow);
+}
+
+.fc-event.event-completed {
+    background: rgba(40, 167, 69, 0.1);
+    border-color: #28a745;
+}
+
+.fc-event.event-ongoing {
+    background: rgba(255, 193, 7, 0.1);
+    border-color: #ffc107;
+    animation: pulse 1.5s infinite;
+}
+
+.calendar-event-tooltip {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem;
+}
+
+.calendar-event-tooltip .game-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+}
+
+.calendar-event-tooltip .event-details {
+    font-size: 0.9rem;
+}
+
+.calendar-event-tooltip .game-name {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.calendar-tooltip {
+    --bs-tooltip-bg: var(--card-bg);
+    --bs-tooltip-color: var(--text-primary);
+    --bs-tooltip-opacity: 1;
+}
+
+.calendar-tooltip .tooltip-inner {
+    max-width: 300px;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+}
+
+/* Calendar No Matches Indicator */
+.no-matches-indicator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+    margin-top: 4px;
+}
+
+.no-matches-indicator small {
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    opacity: 0.7;
+}
+
+/* Update calendar day cell styles */
+.fc .fc-daygrid-day-frame {
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+.fc .fc-daygrid-day-top {
+    flex-grow: 0;
+}
+
+.fc .fc-daygrid-day-events {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* Empty day hover effect */
+.fc .fc-daygrid-day:hover {
+    background: rgba(255, 59, 59, 0.05);
+}
+
+/* Update text colors */
+.fc {
+    --fc-list-event-hover-bg-color: rgba(255, 59, 59, 0.1);
+    --fc-neutral-bg-color: var(--darker-bg);
+    --fc-neutral-text-color: var(--text-secondary);
+    --fc-page-bg-color: var(--darker-bg);
+}
+
+.fc .fc-daygrid-day-number {
+    color: var(--text-primary);
+}
+
+.fc .fc-col-header-cell-cushion {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+/* Calendar Empty State */
+.calendar-empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 2rem;
+    text-align: center;
+    color: var(--text-primary);
+}
+
+.calendar-empty-state i {
+    font-size: 3rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    text-shadow: var(--accent-glow);
+}
+
+.calendar-empty-state h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.calendar-empty-state p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+/* Trophy icon specific style */
+.calendar-empty-state i.bi-trophy {
+    color: #ffd700;
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+} 

@@ -1,0 +1,150 @@
+/* Header Navigation */
+.dashboard-header {
+    background: var(--dark-primary);
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    height: 32px;
+    width: auto;
+}
+
+.brand h1 {
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+/* Main Navigation */
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.nav-item {
+    color: var(--text-secondary);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+.nav-item i {
+    font-size: 1.1rem;
+}
+
+.nav-item:hover {
+    color: var(--text-primary);
+}
+
+.nav-item.active {
+    color: var(--accent-color);
+}
+
+.nav-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--accent-color);
+}
+
+/* User Menu */
+.user-menu {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.admin-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.admin-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.admin-name {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.admin-role {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+.menu-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.menu-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.menu-link:hover {
+    color: var(--text-primary);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .admin-role,
+    .menu-link span {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-header {
+        padding: 1rem;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .main-nav {
+        order: 3;
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 0.5rem;
+    }
+
+    .nav-item {
+        white-space: nowrap;
+    }
+
+    .admin-name {
+        display: none;
+    }
+} 
